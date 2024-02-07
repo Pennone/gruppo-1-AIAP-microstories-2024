@@ -215,7 +215,8 @@ i,
     font-weight: 500;
 }
 
-.nascosto, #close-btn {
+.nascosto,
+#close-btn {
     display: none;
 }
 
@@ -223,7 +224,8 @@ i,
     margin-left: 100%;
 }
 
-#contenutoIniziale, #contenutoSuccessivo {
+#contenutoIniziale,
+#contenutoSuccessivo {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -371,7 +373,8 @@ select:focus {
     outline: none;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     width: 14px;
     height: 14px;
     vertical-align: middle;
@@ -385,7 +388,8 @@ input[type=checkbox], input[type=radio] {
     margin-bottom: 0px;
 }
 
-input[type=checkbox]:checked, input[type=radio]:checked {
+input[type=checkbox]:checked,
+input[type=radio]:checked {
     background-color: var(--background-dark-color);
 }
 
@@ -400,5 +404,17 @@ input[type=checkbox]:checked, input[type=radio]:checked {
     height: 100%;
     background-color: var(--background-light-color);
     padding-top: 60px;
-    transition: top 0.75s ease-in-out; 
-  }
+    transition: top 0.75s ease-in-out;
+}
+
+#sceltapercorso {
+    flex-basis: 0%;
+    width: 0px; /*=> 600px*/
+    overflow: hidden;
+    transition: flex-basis 0.5s ease-in-out;
+}
+
+#sceltapercorso2 {
+    flex-basis: 100%; /*=> 60%*/
+    transition: flex-basis 0.5s ease-in-out;
+}
