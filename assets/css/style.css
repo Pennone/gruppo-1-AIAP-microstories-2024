@@ -1,0 +1,79 @@
+@import url('font.css');
+:root {
+    /* Palette */
+    --bianco-color: #FFFFFF;
+    --nero-color: #000000;
+    --verdino-color: #D5EE9F;
+    --verdone-color: #60D394;
+    --azzurro-color: #A3D9FF;
+    --giallo-color: #F3C969;
+   
+    /* Tema globale */
+    --background-dark-color: var( --nero-color);
+    --background-light-color: var(--bianco-color);
+    --text-dark-color: var(--nero-color);
+    --text-light-color: var(--bianco-color);
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body {
+    background: var(--background-light-color);
+    z-index: 0;
+    overflow-x: hidden;
+}
+
+.backdark {
+    background: var(--background-dark-color);
+}
+
+.backlight {
+    background: var(--background-light-color);
+}
+
+h1, h2, h3, p, a, .h1, .h2, .h3, .p, .a {
+    color: var(--text-dark-color);
+    text-align: left;
+}
+
+h1, .h1 {
+   font-weight: bold;
+   font-size: 60px;
+   line-height: 120%;
+   margin-bottom: 5px;
+}
+
+h2, .h2 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+h3, .h3 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+h4, .h4 {
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+p, .p {
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.contenuto {
+    margin: auto 10%;
+}
