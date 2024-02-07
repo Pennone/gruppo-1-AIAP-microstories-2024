@@ -128,7 +128,7 @@ i,
 }
 
 .contenuto {
-    margin: auto 110px;
+    margin: auto 70px;
 }
 
 .centra {
@@ -199,6 +199,36 @@ i,
     cursor: pointer;
 }
 
+.ruota180 {
+    transform: rotate(180deg);
+}
+
+.button {
+    border-radius: var(--border-radius);
+    border: var(--border-size) solid var(--border-color);
+    padding: 8px 12px;
+}
+
+.button:hover {
+    background-color: var(--background-dark-color);
+    color: var(--text-light-color);
+    font-weight: 500;
+}
+
+.nascosto, #close-btn {
+    display: none;
+}
+
+#contenutoSuccessivo {
+    margin-left: 100%;
+}
+
+#contenutoIniziale, #contenutoSuccessivo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 /* --------------------------------------------------------------------------------------------------*/
 /* Barra di navigazione */
 
@@ -263,7 +293,7 @@ main {
 }
 
 .flexbasis-margin {
-    flex-basis: 130px;
+    flex-basis: 70px !important;
 }
 
 /*
@@ -275,12 +305,17 @@ main {
     flex-basis: 100% !important;
 }
 
+.flexbasis-centro {
+    flex-basis: calc(100% - 140px) !important;
+}
+
 .gap {
     gap: 0px !important;
 }
 
 .flex-h100 {
     align-items: stretch;
+    height: 100%;
 }
 
 .flex-start {
@@ -292,22 +327,25 @@ main {
     max-height: 100%;
 }
 
-.flex2 {
-    display: inline-flex;
-    min-height: auto;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap;
+.flex-colonna {
+    flex-direction: column;
 }
 
-.flex3 {
-    display: inline-flex;
-    min-height: auto;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
+.flexbasis_40 {
+    flex-basis: 40%;
 }
+
+.flexbasis_60 {
+    flex-basis: 60%;
+}
+
+
+
+
+
+
+
+
 
 /* --------------------------------------------------------------------------------------------------*/
 /* Filtri */
@@ -350,3 +388,17 @@ input[type=checkbox], input[type=radio] {
 input[type=checkbox]:checked, input[type=radio]:checked {
     background-color: var(--background-dark-color);
 }
+
+/* --------------------------------------------------------------------------------------------------*/
+/* Offcanvas */
+
+.offcanvas {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-light-color);
+    padding-top: 60px;
+    transition: top 0.75s ease-in-out; 
+  }
