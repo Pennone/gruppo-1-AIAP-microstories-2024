@@ -191,6 +191,10 @@ i,
     padding: 10px;
 }
 
+.padding-b-10 {
+    padding-bottom: 10px;
+}
+
 .padding-b-20 {
     padding-bottom: 20px;
 }
@@ -209,7 +213,22 @@ i,
     padding: 8px 12px;
 }
 
+.button-s {
+    border-radius: var(--border-radius);
+    border: var(--border-size) solid var(--border-color);
+    padding: 4px 6px;
+    font-size: 10px;
+    padding: 4px 6px;
+    font-weight: 500;
+}
+
 .button:hover {
+    background-color: var(--background-dark-color);
+    color: var(--text-light-color);
+    font-weight: 500;
+}
+
+.button-s:hover {
     background-color: var(--background-dark-color);
     color: var(--text-light-color);
     font-weight: 500;
@@ -237,6 +256,14 @@ i,
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
 }
 
 /* --------------------------------------------------------------------------------------------------*/
@@ -323,6 +350,10 @@ main {
     gap: 0px !important;
 }
 
+.gap10 {
+    gap: 10px !important;
+}
+
 .flex-h100 {
     align-items: stretch;
     height: 100%;
@@ -330,6 +361,10 @@ main {
 
 .flex-start {
     justify-content: flex-start;
+}
+
+.flex-centra {
+    justify-content: center !important;
 }
 
 .immagine {

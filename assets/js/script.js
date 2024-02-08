@@ -31,9 +31,11 @@ $(document).ready(function () {
     
             // Creazione del popover
             var popoverHtml = '<div class="popover-content padding-10">';
-            popoverHtml += '<img src="' + imageUrl + '" alt="Artifact" class="spazio-10">';
-            popoverHtml += '<h4 class="spazio-10">' + content + '</h4>';
-            popoverHtml += '<span class="pill">' + animal + '</span>';
+            popoverHtml += '<div class="spazio-10">';
+            popoverHtml += '<span class="pill flex">' + animal + '</span>';
+            popoverHtml += '</div>';
+            popoverHtml += '<div class="flex spazio-10"><img src="' + imageUrl + '" alt="Artifact" class="spazio-10 centra"></div>';
+            popoverHtml += '<h4>' + content + '</h4>';
             popoverHtml += '</div>';
 
             $('body').append(popoverHtml);
@@ -97,7 +99,7 @@ function naviga() {
         }, 50);
         navigazione = "menù";
         setTimeout(function () {
-            $("#sceltapercorso > div").load("assets/data/chose-route.html"); console.log("Caricato");
+            $("#sceltapercorso > div").load("assets/data/chose-route.html"); 
             $("#sceltapercorso > div").show();
         }, 500);
     } else if (navigazione == "menù") {
@@ -164,4 +166,13 @@ function vibrateRandomElements() {
 
     mainInterval = setInterval(selectRandomElements, Math.random() * 500 + 500);
     setInterval(resetAndPause, 5000); // Resetta e metti in pausa ogni
+}
+
+
+function caricamento_pag(elemento) {
+    switch (elemento) {
+        case "route-tecniche":
+            $("#sceltapercorso > div").load("assets/data/techniques.html");
+            break;
+    }
 }
