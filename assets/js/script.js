@@ -4,15 +4,19 @@ var database;
 
 $(document).ready(function () {
 
-    $.getJSON('assets/data/data.json', function(database) {
+    // Lettura database
+
+    $.getJSON('assets/data/data.json', function (data) {
         console.log("Database letto!");
+
+        database = data;
 
         /*$.each(database, function(index, item) {
             console.log('ID:', item.id);
             console.log('URL:', item.url);
             console.log('Titolo:', item.title);*/
-        });
-   
+    });
+
 
     // About
 
@@ -41,8 +45,8 @@ $(document).ready(function () {
         function () {
 
             var home_hover_id = $(this).attr("id");
-
-            console.log(home_hover_id);
+            var soloNumero = home_hover_id.replace("img_", '');
+            var soloNumero = parseInt(soloNumero, 10);
 
             /*
             var content = $(this).data('content');
@@ -58,15 +62,16 @@ $(document).ready(function () {
             popoverHtml += '<h4>' + content + '</h4>';
             popoverHtml += '</div>';*/
 
+            var elementoTrovato = trovaElementoPerId(database, soloNumero);
 
-
+            console.log(elementoTrovato);
 
             var popoverHtml = '<div class="popover-content padding-10">';
             popoverHtml += '<div class="spazio-10">';
-            popoverHtml += '<span class="pill flex">' + animal + '</span>';
+            popoverHtml += '<span class="pill flex">' + elementoTrovato.animal + '</span>';
             popoverHtml += '</div>';
-            popoverHtml += '<div class="flex spazio-10"><img src="' + imageUrl + '" alt="Artifact" class="spazio-10 centra"></div>';
-            popoverHtml += '<h4>' + content + '</h4>';
+            popoverHtml += '<div class="flex spazio-10"><img src="' + elementoTrovato.imag + '" alt="Artifact" class="spazio-10 centra"></div>';
+            popoverHtml += '<h4>' + elementoTrovato.title + '</h4>';
             popoverHtml += '</div>';
 
 
@@ -130,7 +135,6 @@ function trovaElementoPerId(array, idDaCercare) {
             return array[i];
         }
     }
-    // Se non viene trovato nessun elemento con l'id corrispondente
     return null;
 }
 
