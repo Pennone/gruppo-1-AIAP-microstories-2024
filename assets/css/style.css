@@ -387,6 +387,10 @@ main {
     justify-content: flex-start;
 }
 
+.flex-end {
+    justify-content: flex-end;
+}
+
 .flex-centra {
     justify-content: center !important;
 }

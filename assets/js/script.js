@@ -1,6 +1,18 @@
 var navigazione = "home";
+var home_id;
+var database;
 
 $(document).ready(function () {
+
+    $.getJSON('assets/data/data.json', function(database) {
+        console.log("Database letto!");
+
+        /*$.each(database, function(index, item) {
+            console.log('ID:', item.id);
+            console.log('URL:', item.url);
+            console.log('Titolo:', item.title);*/
+        });
+   
 
     // About
 
@@ -27,6 +39,12 @@ $(document).ready(function () {
 
     $('.popover').hover(
         function () {
+
+            var home_hover_id = $(this).attr("id");
+
+            console.log(home_hover_id);
+
+            /*
             var content = $(this).data('content');
             var imageUrl = $(this).data('image');
             var animal = $(this).data('animal');
@@ -38,7 +56,22 @@ $(document).ready(function () {
             popoverHtml += '</div>';
             popoverHtml += '<div class="flex spazio-10"><img src="' + imageUrl + '" alt="Artifact" class="spazio-10 centra"></div>';
             popoverHtml += '<h4>' + content + '</h4>';
+            popoverHtml += '</div>';*/
+
+
+
+
+            var popoverHtml = '<div class="popover-content padding-10">';
+            popoverHtml += '<div class="spazio-10">';
+            popoverHtml += '<span class="pill flex">' + animal + '</span>';
             popoverHtml += '</div>';
+            popoverHtml += '<div class="flex spazio-10"><img src="' + imageUrl + '" alt="Artifact" class="spazio-10 centra"></div>';
+            popoverHtml += '<h4>' + content + '</h4>';
+            popoverHtml += '</div>';
+
+
+
+
 
             $('body').append(popoverHtml);
 
@@ -77,7 +110,29 @@ $(document).ready(function () {
         }
     );
 
+    $(".popover").click(function () {
+        // ID dell'elemento cliccato
+        home_id = $(this).attr("id");
+
+        if (navigazione == "home") {
+            navigazione = "info-home";
+            naviga();
+        }
+    });
+
 });
+
+// Ricerca nell'array
+
+function trovaElementoPerId(array, idDaCercare) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].id === idDaCercare) {
+            return array[i];
+        }
+    }
+    // Se non viene trovato nessun elemento con l'id corrispondente
+    return null;
+}
 
 // Menu
 
@@ -119,7 +174,28 @@ function naviga() {
     } else if (navigazione == "route") {
         $("#sceltapercorso > div").load("assets/data/chose-route.html");
         navigazione = "menù";
-        
+
+    } else if (navigazione == "info-home") {
+        $("#sceltapercorso > div").html(" "); //Svuota div
+        $("#sceltapercorso").css("flex-basis", "40%");
+        $("#sceltapercorso2").css("flex-basis", "60%");
+
+        $("#filtri").animate({ bottom: '-100%' });
+
+        setTimeout(function () {
+            $("#sceltapercorso").addClass("bordo-lf");
+        }, 50);
+        setTimeout(function () {
+            $("#sceltapercorso > div").load("assets/data/home-info.html");
+        }, 500);
+        navigazione = "info-home2";
+    } else if (navigazione == "info-home2") {
+        $("#sceltapercorso > div").load("assets/data/chose-route.html");
+
+        $("#menudestro > h3").text("Explore freely");
+        $("#menudestro > img").addClass("ruota180");
+        navigazione = "menù";
+
     }
 };
 
