@@ -1,3 +1,5 @@
+var navigazione = "home";
+
 $(document).ready(function () {
 
     // About
@@ -28,7 +30,7 @@ $(document).ready(function () {
             var content = $(this).data('content');
             var imageUrl = $(this).data('image');
             var animal = $(this).data('animal');
-    
+
             // Creazione del popover
             var popoverHtml = '<div class="popover-content padding-10">';
             popoverHtml += '<div class="spazio-10">';
@@ -39,31 +41,31 @@ $(document).ready(function () {
             popoverHtml += '</div>';
 
             $('body').append(popoverHtml);
-    
+
             // Posiziona il popover
             var objectPosition = $(this).offset();
             var popoverHeight = $('.popover-content').outerHeight();
             var windowWidth = $(window).width();
             var windowHeight = $(window).height();
-    
+
             var topPosition = objectPosition.top - popoverHeight - 10;
             var leftPosition = objectPosition.left - 65;
-    
+
             // Verifica se c'è spazio sufficiente sopra l'oggetto
             if (topPosition < 0) {
                 topPosition = objectPosition.top + $(this).outerHeight() + 10;
             }
-    
+
             // Verifica se c'è spazio sufficiente a destra dell'oggetto
             if (leftPosition + $('.popover-content').outerWidth() > windowWidth) {
                 leftPosition = windowWidth - $('.popover-content').outerWidth();
             }
-    
+
             $('.popover-content').css({
                 top: topPosition,
                 left: leftPosition
             });
-    
+
             // Mostra il popover
             $('.popover-content').fadeIn();
         },
@@ -79,12 +81,10 @@ $(document).ready(function () {
 
 // Menu
 
-var navigazione = "home";
-
 function naviga() {
 
     if (navigazione == "home") {
-        $("#sceltapercorso > div").hide();
+        $("#sceltapercorso > div").html(" "); //Svuota div
         $("#sceltapercorso").css("flex-basis", "40%");
         $("#sceltapercorso2").css("flex-basis", "60%");
 
@@ -99,11 +99,11 @@ function naviga() {
         }, 50);
         navigazione = "menù";
         setTimeout(function () {
-            $("#sceltapercorso > div").load("assets/data/chose-route.html"); 
+            $("#sceltapercorso > div").load("assets/data/chose-route.html");
             $("#sceltapercorso > div").show();
         }, 500);
     } else if (navigazione == "menù") {
-        $("#sceltapercorso > div").hide();
+        $("#sceltapercorso > div").html(" "); //Svuota div
         $("#sceltapercorso").css("flex-basis", "0%");
         $("#sceltapercorso2").css("flex-basis", "100%");
 
@@ -116,6 +116,10 @@ function naviga() {
             $("#sceltapercorso").removeClass("bordo-lf");
         }, 500);
         navigazione = "home";
+    } else if (navigazione == "route") {
+        $("#sceltapercorso > div").load("assets/data/chose-route.html");
+        navigazione = "menù";
+        
     }
 };
 
@@ -173,6 +177,14 @@ function caricamento_pag(elemento) {
     switch (elemento) {
         case "route-tecniche":
             $("#sceltapercorso > div").load("assets/data/techniques.html");
+            navigazione = "route";
+            $("#menudestro > h3").text("Explore other routes");
+            break;
+        case "route-scopo":
+            //$("#sceltapercorso > div").load("assets/data/techniques.html");
+            break;
+        case "route-interpretazione":
+            //$("#sceltapercorso > div").load("assets/data/techniques.html");
             break;
     }
 }
