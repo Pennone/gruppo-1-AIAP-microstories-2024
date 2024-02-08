@@ -29,14 +29,13 @@ $(document).ready(function () {
             var imageUrl = $(this).data('image');
             var animal = $(this).data('animal');
     
-            // Creazione del nuovo popover in un div separato
+            // Creazione del popover
             var popoverHtml = '<div class="popover-content padding-10">';
             popoverHtml += '<img src="' + imageUrl + '" alt="Artifact" class="spazio-10">';
             popoverHtml += '<h4 class="spazio-10">' + content + '</h4>';
             popoverHtml += '<span class="pill">' + animal + '</span>';
             popoverHtml += '</div>';
-    
-            // Inserisci il popover nell'HTML
+
             $('body').append(popoverHtml);
     
             // Posiziona il popover
@@ -46,14 +45,14 @@ $(document).ready(function () {
             var windowHeight = $(window).height();
     
             var topPosition = objectPosition.top - popoverHeight - 10;
-            var leftPosition = objectPosition.left;
+            var leftPosition = objectPosition.left - 65;
     
-            // Verifica se c'è spazio sufficiente sopra l'oggetto per il popover
+            // Verifica se c'è spazio sufficiente sopra l'oggetto
             if (topPosition < 0) {
                 topPosition = objectPosition.top + $(this).outerHeight() + 10;
             }
     
-            // Verifica se c'è spazio sufficiente a destra dell'oggetto per il popover
+            // Verifica se c'è spazio sufficiente a destra dell'oggetto
             if (leftPosition + $('.popover-content').outerWidth() > windowWidth) {
                 leftPosition = windowWidth - $('.popover-content').outerWidth();
             }
@@ -160,10 +159,9 @@ function vibrateRandomElements() {
         setTimeout(() => {
             isPaused = false;
             selectRandomElements();
-        }, 10); // Pausa di 3 secondi prima di riavviare la vibrazione
+        }, 10); // Pausa prima di riavviare la vibrazione
     }
 
     mainInterval = setInterval(selectRandomElements, Math.random() * 500 + 500);
-    // Resetta e metti in pausa ogni 5 secondi
-    setInterval(resetAndPause, 5000);
+    setInterval(resetAndPause, 5000); // Resetta e metti in pausa ogni
 }
