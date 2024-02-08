@@ -30,7 +30,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace !important;
 }
 
 body {
@@ -311,12 +311,12 @@ i,
     text-overflow: clip;
 }
 
-.button .icona_button{
-    fill:black;
+.button .icona_button {
+    fill: black;
 }
 
-.button:hover .icona_button{
-    fill:white !important;
+.button:hover .icona_button {
+    fill: white !important;
 }
 
 /* --------------------------------------------------------------------------------------------------*/
@@ -558,66 +558,172 @@ input[type=radio]:checked {
 /* Grafici */
 
 .st0 {
-    fill: #BC7444;
+    fill: none;
+    stroke: #FF4D6F;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st1 {
-    fill: #63E0C8;
+    fill: none;
+    stroke: #866FDD;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st2 {
-    fill: #6BDD62;
+    fill: none;
+    stroke: #EA73D0;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st3 {
-    fill: #4082E2;
+    fill: none;
+    stroke: #008DF7;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st4 {
-    fill: #48A4FF;
+    fill: none;
+    stroke: #00BFD3;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st5 {
-    fill: #FC83FF;
+    fill: none;
+    stroke: #001CEA;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st6 {
-    fill: #965AE2;
+    fill: none;
+    stroke: #B76F18;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st7 {
-    fill: #3A9B55;
+    fill: none;
+    stroke: #778212;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st8 {
-    fill: #EDE715;
+    fill: none;
+    stroke: #CDF71E;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st9 {
-    fill: #FF954D;
+    fill: none;
+    stroke: #F9F91C;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
 .st10 {
-    fill: #FF4D6F;
+    fill: none;
+    stroke: #FF8500;
+    stroke-width: 4;
+    stroke-linejoin: round;
 }
 
-.st11,
-.st12,
-.st13,
-.st14,
-.st15,
+.st11 {
+    fill: none;
+    stroke: #EF9F00;
+    stroke-width: 4;
+    stroke-linejoin: round;
+}
+
+.st12 {
+    fill: none;
+    stroke: #EACE00;
+    stroke-width: 4;
+    stroke-linejoin: round;
+}
+
+.st13 {
+    font-family: 'IBMPlexMono-Regular';
+}
+
+.st14 {
+    font-size: 36.52px;
+}
+
+.st15 {
+    font-size: 38.07px;
+}
+
 .st16,
 .st17,
 .st18,
 .st19,
 .st20,
 .st21,
-.st22 {
+.st22,
+.st23,
+.st24,
+.st25,
+.st26 {
     fill: none;
-    stroke: #CCCBCB;
+    stroke: #3C3C3B;
     stroke-dasharray: 0, 0, 19.89, 19.89;
 }
 
-.st23 {
+.st27 {
+    fill: #BC7444;
+}
+
+.st28 {
+    fill: #63E0C8;
+}
+
+.st29 {
+    fill: #6BDD62;
+}
+
+.st30 {
+    fill: #4082E2;
+}
+
+.st31 {
+    fill: #48A4FF;
+}
+
+.st32 {
+    fill: #FC83FF;
+}
+
+.st33 {
+    fill: #965AE2;
+}
+
+.st34 {
+    fill: #3A9B55;
+}
+
+.st35 {
+    fill: #3A9B55;
+}
+
+.st36 {
+    fill: #EDE715;
+}
+
+.st37 {
+    fill: #FF954D;
+}
+
+.st38 {
+    fill: #FF4D6F;
+}
+
+.st39 {
     fill: #AFAFAF;
 }
