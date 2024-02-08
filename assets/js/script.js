@@ -49,7 +49,7 @@ $(document).ready(function () {
             var elementoTrovato = trovaElementoPerId(database, soloNumero);
 
             var popoverHtml = '<div class="popover-content padding-10">';
-            popoverHtml += '<span class="pill flex">' + elementoTrovato.animal + '</span>';
+            popoverHtml += '<span class="pill flex maiuscola">' + elementoTrovato.animal + '</span>';
             popoverHtml += '<div class="flex padding-10"><img src="' + elementoTrovato.img + '" alt="' + elementoTrovato.title + '" class="centra"></div>';
             popoverHtml += '<h4>' + elementoTrovato.title + '</h4>';
             popoverHtml += '</div>';
@@ -104,7 +104,7 @@ $(document).ready(function () {
             var elementoTrovato = trovaElementoPerId(database, soloNumero);
             saveToSessionStorage("artefatto_temp", elementoTrovato);
 
-        if (navigazione == "home") {
+        if (navigazione == "home" || navigazione == "info-home2") {
             navigazione = "info-home";
             naviga(home_id);
         }

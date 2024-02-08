@@ -278,16 +278,33 @@ i,
 }
 
 .popover-content img {
-    width: 100%;
-    height: auto;
+    display: block;
     max-width: 130px;
     max-height: 130px;
-    margin: 0;
-    padding: 0;
+    width: auto;
+    height: auto;
 }
 
 .popover:hover .popover-content {
     display: block;
+}
+
+.maiuscola {
+    text-transform: capitalize;
+}
+
+.greca {
+    overflow: hidden;
+    height: 1.2em;
+    text-overflow: clip;
+}
+
+.button .icona_button{
+    fill:black;
+}
+
+.button:hover .icona_button{
+    fill:white !important;
 }
 
 /* --------------------------------------------------------------------------------------------------*/
@@ -353,6 +370,15 @@ main {
     gap: var(--gap);
 }
 
+.flex2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: var(--gap);
+}
+
 .flexbasis-margin {
     flex-basis: 70px !important;
 }
@@ -387,6 +413,10 @@ main {
     justify-content: flex-start;
 }
 
+.flex-start-item {
+    align-items: flex-start;
+}
+
 .flex-end {
     justify-content: flex-end;
 }
@@ -414,6 +444,10 @@ main {
 
 .flexbasis_50 {
     flex-basis: 50%;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
 }
 
 .scroll {
