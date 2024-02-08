@@ -1712,7 +1712,7 @@
     {
         "id": 115,
         "url": "https://aiap.it/2000-2020/cdpg/index%EF%B9%96ID=8833&IDsubarea=169&IDsez=349.html",
-        "img": "https://aiap.it/imgcontenuti/Animaghi_lamb.png",
+        "img": "https://aiap.it/imgcontenuti/Animaghi_Agnello.png",
         "title": "Manifesto “Fratello Pecora”",
         "habitat": "mountain",
         "animal": "lamb",
@@ -1802,7 +1802,7 @@
     {
         "id": 121,
         "url": "https://aiap.it/2000-2020/cdpg/index%EF%B9%96ID=8836&IDsubarea=169&IDsez=349.html",
-        "img": "https://aiap.it/imgcontenuti/Animaghi_wolf.png",
+        "img": "https://aiap.it/imgcontenuti/Animaghi_Lupo.png",
         "title": "Manifesto “Lupo”",
         "habitat": "mountain",
         "animal": "wolf",
@@ -2125,6 +2125,21 @@
         "author": "Franco Balan",
         "artifact": "poster sketch",
         "tipology": "birds",
+        "art": "illustration",
+        "interpretation": "pictographic",
+        "scope": "letterale"
+    },
+{
+        "id": 143,
+        "url": "https://aiap.it/2000-2020/cdpg%EF%B9%96ID=4241&IDsubarea=169&IDsez=200.html#top",
+        "img": "https://aiap.it/imgcontenuti/Silvio_Coppola_2[copia1].png",
+        "title": "Il toro in velluto a coste",
+        "habitat": "mountain",
+        "animal": "bull",
+        "year": 1970,
+        "author": "Silvio Coppola",
+        "artifact": "poster",
+        "tipology": "mammals",
         "art": "illustration",
         "interpretation": "pictographic",
         "scope": "letterale"
