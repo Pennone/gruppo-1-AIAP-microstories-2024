@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $.getJSON('assets/data/data.json', function (data) {
         console.log("Database letto!");
-        
+
 
         database = data;
         saveToSessionStorage("database", database);
@@ -96,13 +96,13 @@ $(document).ready(function () {
         home_id = $(this).attr("id");
 
         var home_id = $(this).attr("id");
-            var soloNumero = home_id.replace("img_", '');
-            var soloNumero = parseInt(soloNumero, 10);
+        var soloNumero = home_id.replace("img_", '');
+        var soloNumero = parseInt(soloNumero, 10);
 
-            var database = getFromSessionStorage("database");
+        var database = getFromSessionStorage("database");
 
-            var elementoTrovato = trovaElementoPerId(database, soloNumero);
-            saveToSessionStorage("artefatto_temp", elementoTrovato);
+        var elementoTrovato = trovaElementoPerId(database, soloNumero);
+        saveToSessionStorage("artefatto_temp", elementoTrovato);
 
         if (navigazione == "home" || navigazione == "info-home2") {
             navigazione = "info-home";
@@ -166,6 +166,7 @@ function naviga(id) {
 
     } else if (navigazione == "info-home") {
         $("#sceltapercorso > div").html(" "); //Svuota div
+        removeFromSessionStorage("tab_temp");
         $("#sceltapercorso").css("flex-basis", "40%");
         $("#sceltapercorso2").css("flex-basis", "60%");
 
@@ -178,7 +179,7 @@ function naviga(id) {
             $("#sceltapercorso > div").load("assets/data/home-info.html");
         }, 500);
         navigazione = "info-home2";
-   } else if (navigazione == "info-home2") {
+    } else if (navigazione == "info-home2") {
         $("#sceltapercorso > div").load("assets/data/chose-route.html");
 
         $("#menudestro > h3").text("Explore freely");
@@ -246,12 +247,58 @@ function caricamento_pag(elemento) {
             $("#menudestro > h3").text("Explore other routes");
             break;
         case "route-scopo":
-            //$("#sceltapercorso > div").load("assets/data/techniques.html");
+            $("#sceltapercorso > div").load("assets/data/scope.html");
+            navigazione = "route";
+            $("#menudestro > h3").text("Explore other routes");
             break;
         case "route-interpretazione":
-            //$("#sceltapercorso > div").load("assets/data/techniques.html");
+            $("#sceltapercorso > div").load("assets/data/interpretation.html");
+            navigazione = "route";
+            $("#menudestro > h3").text("Explore other routes");
             break;
     }
+}
+
+function caricamento_tab(tab) {
+    switch (tab) {
+        case "3tab_home":
+            $("#contenuto-tab").load("assets/data/3home.html");
+
+            $("#3tab_home").addClass("active");
+            $("#3tab_surreal").removeClass("active");
+            $("#3tab_pictographic").removeClass("active");
+            $("#3tab_realistic").removeClass("active");
+
+            break;
+        case "3tab_surreal":
+            $("#contenuto-tab").load("assets/data/surreal.html");
+
+            $("#3tab_home").removeClass("active");
+            $("#3tab_surreal").addClass("active");
+            $("#3tab_pictographic").removeClass("active");
+            $("#3tab_realistic").removeClass("active");
+
+            break;
+        case "3tab_pictographic":
+            $("#contenuto-tab").load("assets/data/pictographic.html");
+
+            $("#3tab_home").removeClass("active");
+            $("#3tab_surreal").removeClass("active");
+            $("#3tab_pictographic").addClass("active");
+            $("#3tab_realistic").removeClass("active");
+
+            break;
+        case "3tab_realistic":
+            $("#contenuto-tab").load("assets/data/realistic.html");
+
+            $("#3tab_home").removeClass("active");
+            $("#3tab_surreal").removeClass("active");
+            $("#3tab_pictographic").removeClass("active");
+            $("#3tab_realistic").addClass("active");
+
+            break;
+    }
+    saveToSessionStorage("tab_temp", tab);
 }
 
 

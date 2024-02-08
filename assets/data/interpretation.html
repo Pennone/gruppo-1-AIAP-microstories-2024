@@ -1,0 +1,32 @@
+<div class="w100 flex flex-colonna flex-start flex-h100 gap">
+    <div class="bordo-dw w100">
+        <h2 class="padding-10 centra">Explore the Interpretations</h2>
+    </div>
+    <div class="bordo-dw w100">
+        <div class="padding-10 flex gap10" style="padding-bottom: 0px !important;">
+            <a id="3tab_home" href="#" class="button-s centra w100" onclick="caricamento_tab('3tab_home')">The route</a>
+        </div>
+        <div class="padding-10 flex gap10">
+            <a id="3tab_surreal" href="#" class="button-s centra w100" onclick="caricamento_tab('3tab_surreal')">Surreal</a>
+            <a id="3tab_pictographic" href="#" class="button-s centra w100" onclick="caricamento_tab('3tab_pictographic')">Pictographic</a>
+            <a id="3tab_realistic" href="#" class="button-s centra w100" onclick="caricamento_tab('3tab_realistic')">Realistic</a>
+        </div>
+    </div>
+    <div class="w100 h100 padding-10 scroll" id="contenuto-tab">
+        
+    </div>
+</div>
+
+<script>
+     $(document).ready(function () {
+
+        $("#contenuto-tab").load("assets/data/home.html");
+        $("#3tab_home").addClass("active");
+        $("#3tab_surreal").removeClass("active");
+        $("#3tab_pictographic").removeClass("active");
+        $("#3tab_realistic").removeClass("active");
+
+
+
+     });
+</script>
