@@ -1,11 +1,33 @@
 <div class="w100 flex flex-colonna flex-start flex-h100 gap">
     <div class="bordo-dw w100 padding-10 flex flex-end">
-        <a href="#" onclick="navigazione = 'menù'; naviga(data);" style="margin-right: 5px;"><img src="assets/img/chiudi.svg"></a>
+        <a href="#" onclick="navigazione = 'menù'; naviga(data);" style="margin-right: 5px;"><img
+                src="assets/img/chiudi.svg"></a>
     </div>
     <div class="w100 padding-10">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque tempora ipsam, eaque consequatur modi provident laudantium recusandae facilis accusantium est aperiam culpa cum laboriosam quo voluptatem in numquam ducimus. Recusandae.</p>
+        <h2 class="spazio-20" id="dett_title"></h2>
+        <div class="flex">
+            <div class="flexbasis_50">
+                <img src="" alt="" id="dett_img">
+            </div>
+            <div class="flexbasis_50">
+                hjg
+            </div>
+        </div>
 
 
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque tempora ipsam, eaque consequatur modi provident laudantium recusandae facilis accusantium est aperiam culpa cum laboriosam quo voluptatem in numquam ducimus. Recusandae.</p>
+
+
+
     </div>
 </div>
+
+<script>
+
+$(document).ready(function () {
+
+    var elementoTrovato = getFromSessionStorage("artefatto_temp");
+
+    $('#dett_title').append(elementoTrovato.title);
+    console.log(elementoTrovato.title);
+});
+</script>

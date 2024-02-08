@@ -1,6 +1,7 @@
 var navigazione = "home";
 var home_id;
 var database;
+var elementoTrovato;
 
 $(document).ready(function () {
 
@@ -8,13 +9,10 @@ $(document).ready(function () {
 
     $.getJSON('assets/data/data.json', function (data) {
         console.log("Database letto!");
+        
 
         database = data;
-
-        /*$.each(database, function(index, item) {
-            console.log('ID:', item.id);
-            console.log('URL:', item.url);
-            console.log('Titolo:', item.title);*/
+        saveToSessionStorage("database", database);
     });
 
 
@@ -48,35 +46,13 @@ $(document).ready(function () {
             var soloNumero = home_hover_id.replace("img_", '');
             var soloNumero = parseInt(soloNumero, 10);
 
-            /*
-            var content = $(this).data('content');
-            var imageUrl = $(this).data('image');
-            var animal = $(this).data('animal');
-
-            // Creazione del popover
-            var popoverHtml = '<div class="popover-content padding-10">';
-            popoverHtml += '<div class="spazio-10">';
-            popoverHtml += '<span class="pill flex">' + animal + '</span>';
-            popoverHtml += '</div>';
-            popoverHtml += '<div class="flex spazio-10"><img src="' + imageUrl + '" alt="Artifact" class="spazio-10 centra"></div>';
-            popoverHtml += '<h4>' + content + '</h4>';
-            popoverHtml += '</div>';*/
-
             var elementoTrovato = trovaElementoPerId(database, soloNumero);
 
-            console.log(elementoTrovato);
-
             var popoverHtml = '<div class="popover-content padding-10">';
-            popoverHtml += '<div class="spazio-10">';
             popoverHtml += '<span class="pill flex">' + elementoTrovato.animal + '</span>';
-            popoverHtml += '</div>';
-            popoverHtml += '<div class="flex spazio-10"><img src="' + elementoTrovato.imag + '" alt="Artifact" class="spazio-10 centra"></div>';
+            popoverHtml += '<div class="flex padding-10"><img src="' + elementoTrovato.img + '" alt="' + elementoTrovato.title + '" class="centra"></div>';
             popoverHtml += '<h4>' + elementoTrovato.title + '</h4>';
             popoverHtml += '</div>';
-
-
-
-
 
             $('body').append(popoverHtml);
 
@@ -119,9 +95,18 @@ $(document).ready(function () {
         // ID dell'elemento cliccato
         home_id = $(this).attr("id");
 
+        var home_id = $(this).attr("id");
+            var soloNumero = home_id.replace("img_", '');
+            var soloNumero = parseInt(soloNumero, 10);
+
+            var database = getFromSessionStorage("database");
+
+            var elementoTrovato = trovaElementoPerId(database, soloNumero);
+            saveToSessionStorage("artefatto_temp", elementoTrovato);
+
         if (navigazione == "home") {
             navigazione = "info-home";
-            naviga();
+            naviga(home_id);
         }
     });
 
@@ -140,7 +125,7 @@ function trovaElementoPerId(array, idDaCercare) {
 
 // Menu
 
-function naviga() {
+function naviga(id) {
 
     if (navigazione == "home") {
         $("#sceltapercorso > div").html(" "); //Svuota div
@@ -193,7 +178,7 @@ function naviga() {
             $("#sceltapercorso > div").load("assets/data/home-info.html");
         }, 500);
         navigazione = "info-home2";
-    } else if (navigazione == "info-home2") {
+   } else if (navigazione == "info-home2") {
         $("#sceltapercorso > div").load("assets/data/chose-route.html");
 
         $("#menudestro > h3").text("Explore freely");
@@ -267,4 +252,27 @@ function caricamento_pag(elemento) {
             //$("#sceltapercorso > div").load("assets/data/techniques.html");
             break;
     }
+}
+
+
+// Salvare dati in sessionStorage
+
+function saveToSessionStorage(key, data) {
+    sessionStorage.setItem(key, JSON.stringify(data));
+}
+
+// Recuperare dati da sessionStorage
+
+function getFromSessionStorage(key) {
+    try {
+        return JSON.parse(sessionStorage.getItem(key));
+    } catch {
+        return undefined;
+    }
+}
+
+// Rimuovere dati da sessionStorage
+
+function removeFromSessionStorage(key) {
+    sessionStorage.removeItem(key);
 }
