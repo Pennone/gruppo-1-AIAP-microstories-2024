@@ -1,0 +1,11 @@
+Surreal tour:
+
+90|pig1|pig2|cavalli15|cavalli13|cavalli24|cavalli6|cavalli4|cavalli5|32|cat2|cat3|cat1|cat4|cat13|rooster1|dog3|dog1|donkey3|78|snake1|89|monkey2|frog1|140|owl1|3|144|100|34|92|93|94|137|96|5|6|105|114|116|lion2|elephant5|elephant4|elephant1|elephant2
+
+Pictographic tour:
+
+145|pig2|cavalli18|cavalli23|cavalli17|cavalli9|33|cat12|cat14|cat7|cat11|cat10|cat5|rooster3|rooster2|rooster4|dog5|31|77|snake2|snake3|79|frog2|monkey2|monkey1|139|owl3|owl2|68|71|sparrow1|sparrow2|91|98|72|74|75|73|76|4|1|7|2|111|110|118|117|107|104|143|109|101|113|121|120|102|115|67|66|lion4|lion3|rinoceronte1|elephant3|elephant7|giraffe2
+
+Realistic tour:
+
+donke1|donkey2|cavalli12|cavalli1|cavalli2|cavalli20|cavalli10|cavalli11|cavalli7|cavalli3|cavalli8|cavalli14|cavalli16|cavalli22|cavalli20|cavalli19|cat6|cat8|cat9|cat13|dog6|dog4|dog1|snake5|snake4|83|82|97|99|95|138|136|112|119|106|108|103|lion1|122|rinoceronte2|elephant6|giraffe1
