@@ -107,12 +107,12 @@ $(document).ready(function () {
 
         var navigazione2 = getFromSessionStorage("navigazione_temp");
 
-        if (navigazione2 != "surreal" && navigazione2 != "pictographic" && navigazione2 != "realistic") {
+        if (navigazione2 != "surreal" && navigazione2 != "pictographic" && navigazione2 != "realistic" && navigazione2 != "3home") {
             if (navigazione == "home" || navigazione == "info-home2") {
                 navigazione = "info-home";
                 naviga(home_id);
             }
-        } else if (navigazione2 == "surreal" || navigazione2 == "pictographic" || navigazione2 == "realistic") {
+        } else if (navigazione2 == "surreal" || navigazione2 == "pictographic" || navigazione2 == "realistic" || navigazione2 == "3home") {
             $("#3tab_home").removeClass("active");
             $("#3tab_surreal").removeClass("active");
             $("#3tab_pictographic").removeClass("active");
@@ -163,7 +163,6 @@ function naviga(id) {
             removeFromSessionStorage("navigazione_temp");
         }
 
-
         $("#sceltapercorso > div").html(" "); //Svuota div
         $("#sceltapercorso").css("flex-basis", "0%");
         $("#sceltapercorso2").css("flex-basis", "100%");
@@ -178,11 +177,10 @@ function naviga(id) {
         }, 500);
         navigazione = "home";
     } else if (navigazione == "route") {
-
         if (navigazione2 !== null) {
             removeFromSessionStorage("navigazione_temp");
         }
-        
+
         $("#sceltapercorso > div").load("assets/data/chose-route.html");
 
         $("#XXXinterpretation").addClass("nascosto");
