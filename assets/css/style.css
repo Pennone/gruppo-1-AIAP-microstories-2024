@@ -229,11 +229,11 @@ i,
     font-weight: 500;
 }
 
-.button-s.active:hover {
+/*.button-s.active:hover {
     background-color: var(--background-light-color);
     color: var(--text-dark-color);
     font-weight: 500;
-}
+}*/
 
 .button:hover {
     background-color: var(--background-dark-color);

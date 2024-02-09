@@ -1,0 +1,155 @@
+<div class="w100" id="dett_categorie2">
+
+</div>
+<div class="w100 padding-20 scroll">
+    <h2 class="spazio-20" id="dett_title2"></h2>
+    <div class="flex flex-start-item spazio-20">
+        <div class="flexbasis_50">
+            <img src="" alt="" id="dett_img2" class="w100">
+        </div>
+        <div class="flexbasis_50">
+            <div id="dett_data2">
+
+            </div>
+        </div>
+    </div>
+    <p class='spazio-20 greca'>
+        ----------------------------------------------------------------------------------------------------------------------------
+    </p>
+    <div>
+        <p class="spazio-10">Subjects tag</p>
+        <div class="flex2 gap10 flex-wrap flex-start" id="dett_tag2">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        var elementoTrovato = getFromSessionStorage("artefatto_temp");
+
+        $('#dett_title2').append(elementoTrovato.title);
+        $('#dett_img2').attr("src", elementoTrovato.img).attr("alt", elementoTrovato.title);
+
+        var dett_data = "<p class='maiuscola spazio-10'>Artifacts:<br><span class='h5'>" + elementoTrovato.artifact + "</span></p>";
+        if (elementoTrovato.year != 0) {
+            dett_data += "<p class='spazio-10'>Year:<br><span class='h5'>" + elementoTrovato.year + "</span></p>";
+        }
+        dett_data += "<p class='maiuscola spazio-20'>Author:<br><span class='h5'>" + elementoTrovato.author + "</span></p>";
+        dett_data += "<p class='spazio-20 greca'>------------------------------------------------------------</p>";
+        dett_data += "<div class='flex flex-colonna flex-start-item gap'><p class='spazio-10'><a target='_blank' href='" + elementoTrovato.url + "' class='button flex2 centra'>";
+        dett_data += "<svg width='15' height='15' viewBox='0 0 15 15' class='icona_button' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M5.22085 0.28637C3.81372 0.694034 2.56275 1.51491 1.63134 2.64176C0.699934 3.76861 0.131398 5.14906 0 6.60276H3.32737C3.52027 4.39068 4.16421 2.24105 5.21981 0.285335L5.22085 0.28637ZM3.32737 7.89732H0C0.131124 9.35108 0.699416 10.7317 1.63064 11.8587C2.56187 12.9857 3.81272 13.8068 5.21981 14.2147C4.16421 12.259 3.52027 10.1094 3.32737 7.89732ZM6.88766 14.4913C5.62617 12.5002 4.85318 10.2413 4.63128 7.89732H9.86669C9.6448 10.2413 8.87181 12.5002 7.61032 14.4913C7.36958 14.5029 7.1284 14.5029 6.88766 14.4913ZM9.2792 14.2137C10.6861 13.8059 11.9369 12.9849 12.8681 11.8581C13.7993 10.7312 14.3677 9.3509 14.499 7.89732H11.1716C10.9788 10.1094 10.3348 12.258 9.2792 14.2137ZM11.1716 6.60276H14.499C14.3679 5.149 13.7996 3.76843 12.8684 2.64139C11.9372 1.51434 10.6863 0.69324 9.2792 0.285335C10.3348 2.24104 10.9788 4.39068 11.1716 6.60276ZM6.88766 0.00881786C7.12875 -0.00293928 7.37027 -0.00293928 7.61136 0.00881786C8.87249 1.99996 9.64512 4.25891 9.86669 6.60276H4.63232C4.85796 4.2446 5.63262 1.98379 6.88766 0.00881786Z' style='fill-opacity:1;'/></svg>";
+        dett_data += "See on AIAP</a></p>";
+        dett_data += "<p><a target='_blank' href='#' class='button flex2 centra'><svg class='icona_button' width='12' height='15' viewBox='0 0 12 15' fill='none' xmlns='http://www.w3.org/2000/svg'><path id='Vector345' d='M9.93429 5.14286H8.57143V0.857143C8.57143 0.385714 8.18571 0 7.71429 0H4.28571C3.81429 0 3.42857 0.385714 3.42857 0.857143V5.14286H2.06571C1.30286 5.14286 0.917143 6.06857 1.45714 6.60857L5.39143 10.5429C5.72571 10.8771 6.26571 10.8771 6.6 10.5429L10.5343 6.60857C11.0743 6.06857 10.6971 5.14286 9.93429 5.14286ZM0 13.7143C0 14.1857 0.385714 14.5714 0.857143 14.5714H11.1429C11.6143 14.5714 12 14.1857 12 13.7143C12 13.2429 11.6143 12.8571 11.1429 12.8571H0.857143C0.385714 12.8571 0 13.2429 0 13.7143Z' style='fill-opacity:1;'/></svg> Download Artifact</a></p></div>";
+
+        $('#dett_data2').append(dett_data);
+
+        $('#dett_tag2').append("<span class='pill maiuscola'>" + elementoTrovato.art + "</span><span class='pill maiuscola'>" + elementoTrovato.interpretation + "</span><span class='pill maiuscola'>" + elementoTrovato.tipology + "</span><span class='pill maiuscola'>" + elementoTrovato.animal + "</animal>");
+
+        //Testo introduttivo
+
+        var dett_categorie;
+
+        switch (elementoTrovato.animal) {
+            case "billy goat":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Billy goat</h2><p>The distinctive element in depictions of a male (billy) goat is its horns, which are often greatly emphasized to represent the strength and resilience of the animal, but at times also symbolizing stubbornness.</p></div>";
+                break;
+            case "bull":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Bull</h2><p>Bulls typically symbolize danger, strength and determination. Their imposing figure evokes a sense of sturdiness and resolve. Often they are depicted as fiery, showing pure anger or ready to charge.</p></div>";
+                break;
+            case "butterfly":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Butterfly</h2><p>Thanks to its delicate appearance and gracious flight, the butterfly is commonly associated with freedom, elegance and weightlessness. The colorful wings are iconic and are at times associated with fantasy.</p></div>";
+                break;
+            case "cat":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Cat</h2><p>The cat’s gaze is an incredibly fascinating aspect. It can convey seriousness, curiosity or wit. Due to the Lewis Carroll’s novel cats are occasionally portrayed smiling, referencing the Cheshire Cat.</p></div>";
+                break;
+            case "centaur":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Centaur</h2><p>The centaur is a mythological figure that merges together half a human and half a horse. It combines the strength and agility of the equine with human reason and wisdom; usually holds a bow and arrow.</p></div>";
+                break;
+            case "chimera":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Chimera</h2><p>The chimera is a mythological figure composed of parts from multiple animals. It is often represented with the head of a lion, the body of a goat, and the tail of a snake or a scorpion.</p></div>";
+                break;
+            case "cow":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Cow</h2><p>Cows embody the tranquility of farm life and often can symbolize abundance. They are typically, but not always, depicted with their faces turned towards the viewer, in a greeting manner or while mooing.</p></div>";
+                break;
+            case "dinosaur":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Dinosaur</h2><p>Although they have gone extinct long ago, non-avian dinosaurs have been part of out collective imagination since the time of their discovery. They are commonly used to illustrate the concept of the otherworldly.</p></div>";
+                break;
+            case "dog":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Dog</h2><p>Dogs are often depicted docile and laying down or in the middle of barking, representing the two aspects recognized we recognize in them: loyalty and the protection from incoming threats.</p></div>";
+                break;
+            case "donkey":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Donkey</h2><p>The donkey is that animal that more than the others conveys humility as a quality. It is often depicted carrying a huge burden, or in general serving their owners diligently. It can also symbolize sturdiness.</p></div>";
+                break;
+            case "dragon":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Dragon</h2><p>The dragon is a mythological figure, akin to reptiles. It often symbolizes power, wisdom and superhuman strength. Not only present in European folklore, it’s depicted differently in various cultures.</p></div>";
+                break;
+            case "elephant":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Elephant</h2><p>The elephant, often associated with Indian culture, is usually represented in media with playful traits. In the past it could be associated with the concept of fear, like famously in Aesop's fables.</p></div>";
+                break;
+            case "fish":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Fish</h2><p>Often, the depictions of fish may not be linked to any specific kind, but just represent the archetype, a stylized figure that evokes the “concept” of fish. It can be a symbolically neutral figure.</p></div>";
+                break;
+            case "frog":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Frog</h2><p>With its agile and lively leaps the frog generally conveys a playful image, representation of lightheartedness. Accordingly, it can be depicted with a friendly and amiable gaze, or an absent-minded look.</p></div>";
+                break;
+            case "giraffe":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Giraffe</h2><p>Giraffes are almost always depicted in profile, emphasizing the length of their necks and capturing the most of their slender and distinctive silhouette. It’s often associated with Africa and its wildlife.</p></div>";
+                break;
+            case "goat":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Goat</h2><p>Goats evoke vitality and agility. Their effortless climbing of steep terrains and the liveliness of their movement are often translated into highly dynamic and stark images and depictions.</p></div>";
+                break;
+            case "horse":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Horse</h2><p>Giving life to the figure of a medieval knight, essential for a cowboy, and closely linked to the theme of travel, the horse holds a lot of symbolic value. It evokes a sense of speed and freedom. <br>It should be noted that over time representations of horses have experienced a decline, probably related the rise of other means of transportation.</p></div>";
+                break;
+            case "lion":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Lion</h2><p>The features of the lion that illustrators and designers mostly focus on are the fiery mane and the fierce mouth and teeth, which often hold the symbolic meaning and are accentuated or enriched with details.</p></div>";
+                break;
+            case "minotaur":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Minotaur</h2><p>The Minotaur is a mythological figure from Greek mythology, with the head of a bull and a human body. Symbolizes ferocity and irrationality, at times representation of the dark forces within humanity.</p></div>";
+                break;
+            case "monkey":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Monkey</h2><p>Monkeys are usually characterized with their vitality and playful spirit, or by their mischievous stunts. This is greatly reflected in their depictions, that can be very varied.</p></div>";
+                break;
+            case "owl":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Owl</h2><p>The owl's eyes are the feature that stands out the most in its graphic depictions; they are depicted as bright yellow and large globes with an iconic fixed and inscrutable gaze.</p></div>";
+                break;
+            case "peacock":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Peacock</h2><p>For centuries, the mesmerizing tail display of the peacock has captivated and fascinated people with its bright colors and distinctive feathers. It is often associated with beauty and vanity.</p></div>";
+                break;
+            case "pig":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Pig</h2><p>Pigs are often depicted in contexts such as the farm life or gruesome slaughterhouses. It has long been a symbol of prosperity, abundance, good luck and, often depicted as a piggy bank, wealth.</p></div>";
+                break;
+            case "pigeon":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Pigeon</h2><p>Since carrier pigeons have existed for a long time, the bird is at times associated with communication. Pigeons are also depicted to remind us of daily life, as they now dwell our cities and urban areas.</p></div>";
+                break;
+            case "rhinoceros":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Rhinoceros</h2><p>The most distinctive element graphic designers gravitate towards when depicting rhinos is the large and imposing horn, which embedded in the animal’s large body only makes its build more menacing and iconic.</p></div>";
+                break;
+            case "rooster":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Rooster</h2><p>The features most accentuated in depictions of roosters are the tail and the red comb and wattles. A famous depiction is in connection to Vittorio Calvino’s theatrical comedy La torre sul pollaio.</p></div>";
+                break;
+            case "sheep":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Sheep</h2><p>Sheep are often depicted in a little group or flock, suggesting that they are commonly associated with a collective. At times, however, they are portrayed individually, usually to emphasize the precious fleece.</p></div>";
+                break;
+            case "snake":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Snake</h2><p>Due to the biblical influence in tradition, snakes often appear when illustrating the theme of vice or, in particular, temptation. However, their sinuous body is generally an alluring subject to depict.</p></div>";
+                break;
+            case "sparrow":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Sparrow</h2><p>The sparrow, perhaps due to its modest size and sweet chirping, evokes the most the concepts of simplicity and lightheartedness. Their ability to fly away at any moment accentuates this duality even more.</p></div>";
+                break;
+            case "stork":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Stork</h2><p>The stork is typically depicted in profile, emphasizing its slender body. Often, the bird is associated with maternity due to the popular legend that accredits “delivering babies” to storks.</p></div>";
+                break;
+            case "wolf":
+                dett_categorie = "<div class='bordo-dw w100 padding-20'><h2 class='spazio-20'>Wolf</h2><p>Wolves commonly represent danger, feral instincts, fierceness and pack unity. They are usually depicted in their natural habitat, the deep forests where they hunt and dwell.</p></div>";
+                break;
+        }
+        $('#dett_categorie2').append(dett_categorie);
+    });
+</script>

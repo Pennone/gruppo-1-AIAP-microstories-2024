@@ -15,13 +15,15 @@
                 onclick="caricamento_tab('3tab_realistic')">Realistic</a>
         </div>
     </div>
-    <div class="w100 h100 padding-10 scroll" id="contenuto-tab">
+    <div class="w100 h100 scroll" id="contenuto-tab">
 
     </div>
 </div>
 
 <script>
+
     $(document).ready(function () {
+
         $("#contenuto-tab").load("assets/data/3home.html");
         $("#3tab_home").addClass("active");
         $("#3tab_surreal").removeClass("active");
@@ -31,8 +33,6 @@
         $("#XXXpictografic").removeClass("nascosto");
         $("#XXXrealistic").removeClass("nascosto");
         $("#XXXsurreal").removeClass("nascosto");
-
-
-
     });
+
 </script>
