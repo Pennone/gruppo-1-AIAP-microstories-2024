@@ -9,7 +9,7 @@
         "year": 1960,
         "author": "Bruno Munari",
         "artifact": "book cover",
-        "tipology": "fish.",
+        "tipology": "fish",
         "art": "illustration",
         "interpretation": "pictographic",
         "scope": ""
@@ -24,7 +24,7 @@
         "year": 1968,
         "author": "Salvatore Grillo",
         "artifact": "book cover",
-        "tipology": "fish.",
+        "tipology": "fish",
         "art": "illustration",
         "interpretation": "pictographic",
         "scope": ""
@@ -39,7 +39,7 @@
         "year": 1990,
         "author": "Celestino Piatti",
         "artifact": "book cover",
-        "tipology": "fish.",
+        "tipology": "fish",
         "art": "illustration",
         "interpretation": "surreal",
         "scope": ""
@@ -54,7 +54,7 @@
         "year": 1957,
         "author": "Enrico Arno",
         "artifact": "comic cover",
-        "tipology": "fish.",
+        "tipology": "fish",
         "art": "illustration",
         "interpretation": "pictographic",
         "scope": ""
@@ -2141,6 +2141,36 @@
         "artifact": "poster",
         "tipology": "mammals",
         "art": "illustration",
+        "interpretation": "pictographic",
+        "scope": "letterale"
+    },
+{
+        "id": 144,
+        "url": "https://aiap.it/2000-2020/cdpg/index%EF%B9%96ID=8142&IDsubarea=169&IDsez=200.html",
+        "img": "https://aiap.it/imgcontenuti/12_racconti_026.png",
+        "title": "12 racconti del terrore",
+        "habitat": "meadow",
+        "animal": "pigeon",
+        "year": 1964,
+        "author": "Silvio Coppola",
+        "artifact": "book cover",
+        "tipology": "birds",
+        "art": "mixed media",
+        "interpretation": "surreal",
+        "scope": "letterale"
+    },
+{
+        "id": 145,
+        "url": "https://aiap.it/2000-2020/cdpg/index%EF%B9%96ID=4473&IDsubarea=169&IDsez=200.html",
+        "img": "https://aiap.it/imgcontenuti/DSCN7811.png",
+        "title": "Il tacchino pasticciere",
+        "habitat": "countryside",
+        "animal": "turkey",
+        "year": 1970,
+        "author": "Silvio Coppola",
+        "artifact": "poster",
+        "tipology": "birds",
+        "art": "mixed media",
         "interpretation": "pictographic",
         "scope": "letterale"
     }

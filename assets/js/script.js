@@ -10,7 +10,6 @@ $(document).ready(function () {
     $.getJSON('assets/data/data.json', function (data) {
         console.log("Database letto!");
 
-
         database = data;
         saveToSessionStorage("database", database);
     });
@@ -162,6 +161,24 @@ function naviga(id) {
         navigazione = "home";
     } else if (navigazione == "route") {
         $("#sceltapercorso > div").load("assets/data/chose-route.html");
+
+        $("#XXXinterpretation").addClass("nascosto");
+        $("#XXXpictografic").addClass("nascosto");
+        $("#XXXrealistic").addClass("nascosto");
+        $("#XXXsurreal").addClass("nascosto");
+        $("#XXXartifacts").addClass("nascosto");
+        $("#XXXrecord_cover").addClass("nascosto");
+        $("#XXXposter").addClass("nascosto");
+        $("#XXXpackaging").addClass("nascosto");
+        $("#XXXdrawing").addClass("nascosto");
+        $("#XXXcomic").addClass("nascosto");
+        $("#XXXmagazine").addClass("nascosto");
+        $("#XXXbook_cover").addClass("nascosto");
+        $("#XXXtechnique").addClass("nascosto");
+        $("#XXXillustration").addClass("nascosto");
+        $("#XXXphotographic").addClass("nascosto");
+        $("#XXXmixed_media").addClass("nascosto");
+
         navigazione = "menù";
 
     } else if (navigazione == "info-home") {
@@ -217,7 +234,7 @@ function vibrateRandomElements() {
         $allOuterElements.forEach((outerElement) => {
             $(outerElement).removeClass('animated');
         });
-        const $randomOuterElements = $allOuterElements.sort(() => Math.random() - 0.5).slice(0, 20); // Seleziona 20 elementi
+        const $randomOuterElements = $allOuterElements.sort(() => Math.random() - 0.5).slice(0, 30); // Seleziona 30 elementi
         $randomOuterElements.forEach((outerElement) => {
             $(outerElement).addClass('animated');
             const $innerGElement = $(outerElement).find('> g').eq(Math.floor(Math.random() * $(outerElement).find('> g').length));
@@ -269,6 +286,10 @@ function caricamento_tab(tab) {
             $("#3tab_pictographic").removeClass("active");
             $("#3tab_realistic").removeClass("active");
 
+            $("#XXXpictografic").removeClass("nascosto");
+            $("#XXXrealistic").removeClass("nascosto");
+            $("#XXXsurreal").removeClass("nascosto");
+
             break;
         case "3tab_surreal":
             $("#contenuto-tab").load("assets/data/surreal.html");
@@ -277,6 +298,10 @@ function caricamento_tab(tab) {
             $("#3tab_surreal").addClass("active");
             $("#3tab_pictographic").removeClass("active");
             $("#3tab_realistic").removeClass("active");
+
+            $("#XXXpictografic").addClass("nascosto");
+            $("#XXXrealistic").addClass("nascosto");
+            $("#XXXsurreal").removeClass("nascosto");
 
             break;
         case "3tab_pictographic":
@@ -287,6 +312,10 @@ function caricamento_tab(tab) {
             $("#3tab_pictographic").addClass("active");
             $("#3tab_realistic").removeClass("active");
 
+            $("#XXXpictografic").removeClass("nascosto");
+            $("#XXXrealistic").addClass("nascosto");
+            $("#XXXsurreal").addClass("nascosto");
+
             break;
         case "3tab_realistic":
             $("#contenuto-tab").load("assets/data/realistic.html");
@@ -296,10 +325,66 @@ function caricamento_tab(tab) {
             $("#3tab_pictographic").removeClass("active");
             $("#3tab_realistic").addClass("active");
 
+            $("#XXXpictografic").addClass("nascosto");
+            $("#XXXrealistic").removeClass("nascosto");
+            $("#XXXsurreal").addClass("nascosto");
+
             break;
     }
     saveToSessionStorage("tab_temp", tab);
 }
+
+//filtri
+
+var database = getFromSessionStorage("database");
+
+function getUniqueAndSortedAuthors(database) {
+    var authors = [];
+    $.each(database, function (index, item) {
+      if ($.inArray(item.author, authors) === -1) {
+        authors.push(item.author);
+      }
+    });
+    // Ordina gli autori in ordine alfabetico
+    authors.sort();
+    return authors;
+  }
+
+// Funzione per popolare il select con i valori degli autori
+function populateAuthorSelect(authors) {
+    var select = $("#autore");
+    $.each(authors, function (index, author) {
+      // Se l'autore è "sconosciuto", visualizza la stringa appropriata
+      var displayText = (author === "unknown") ? "Sconosciuto" : author;
+      select.append("<option value='" + author + "'>" + displayText + "</option>");
+    });
+  }
+
+function getUniqueAndSortedYears(database) {
+    var years = [];
+    $.each(database, function (index, item) {
+      if ($.inArray(item.year, years) === -1) {
+        years.push(item.year);
+      }
+    });
+    // Ordina gli anni in modo cronologico
+    years.sort(function (a, b) {
+      return a - b;
+    });
+    return years;
+  }
+
+// Funzione per popolare il select con i valori degli anni
+function populateYearSelect(years) {
+    var select = $("#data");
+    $.each(years, function (index, year) {
+      // Se l'anno è 0, visualizza "sconosciuto", altrimenti visualizza l'anno
+      var displayText = (year === 0) ? "Sconosciuto" : year;
+      select.append("<option value='" + year + "'>" + displayText + "</option>");
+    });
+  }
+
+
 
 
 // Salvare dati in sessionStorage

@@ -557,123 +557,23 @@ input[type=radio]:checked {
 /* --------------------------------------------------------------------------------------------------*/
 /* Grafici */
 
-.st0 {
-    fill: none;
-    stroke: #FF4D6F;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st1 {
-    fill: none;
-    stroke: #866FDD;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st2 {
-    fill: none;
-    stroke: #EA73D0;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st3 {
-    fill: none;
-    stroke: #008DF7;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st4 {
-    fill: none;
-    stroke: #00BFD3;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st5 {
-    fill: none;
-    stroke: #001CEA;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st6 {
-    fill: none;
-    stroke: #B76F18;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st7 {
-    fill: none;
-    stroke: #778212;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st8 {
-    fill: none;
-    stroke: #CDF71E;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st9 {
-    fill: none;
-    stroke: #F9F91C;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st10 {
-    fill: none;
-    stroke: #FF8500;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
-.st11 {
-    fill: none;
-    stroke: #EF9F00;
-    stroke-width: 4;
-    stroke-linejoin: round;
-}
-
+.st0,
+.st1,
+.st2,
+.st3,
+.st4,
+.st5,
+.st6,
+.st7,
+.st8,
+.st9,
+.st10,
+.st11,
 .st12 {
     fill: none;
-    stroke: #EACE00;
-    stroke-width: 4;
+    stroke: var(--text-dark-color);
+    stroke-width: 2;
     stroke-linejoin: round;
-}
-
-.st13 {
-    font-family: 'IBMPlexMono-Regular';
-}
-
-.st14 {
-    font-size: 36.52px;
-}
-
-.st15 {
-    font-size: 38.07px;
-}
-
-.st16,
-.st17,
-.st18,
-.st19,
-.st20,
-.st21,
-.st22,
-.st23,
-.st24,
-.st25,
-.st26 {
-    fill: none;
-    stroke: #3C3C3B;
-    stroke-dasharray: 0, 0, 19.89, 19.89;
 }
 
 .st27 {
@@ -726,4 +626,47 @@ input[type=radio]:checked {
 
 .st39 {
     fill: #AFAFAF;
+}
+
+.cls-18,
+.cls-19,
+.st14,
+.st15 {
+    font-size: 38px;
+}
+
+.cls-23,
+.cls-24,
+.cls-25,
+.cls-26,
+.cls-27,
+.cls-28,
+.cls-29,
+.cls-30,
+.cls-31,
+.cls-32,
+.cls-33,
+.cls-34 {
+    fill: none;
+    stroke: #3c3c3b;
+}
+
+.cls-24,
+.cls-25,
+.cls-26,
+.cls-27,
+.cls-28,
+.cls-29,
+.cls-30,
+.cls-31,
+.cls-32,
+.cls-20,
+.cls-33,
+.cls-34,
+.cls-23 {
+    stroke-dasharray: 0 0 19.59 19.59;
+}
+
+.cls-20 {
+    font-size: 22px;
 }
